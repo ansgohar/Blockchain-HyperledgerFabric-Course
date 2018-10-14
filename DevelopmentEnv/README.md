@@ -23,10 +23,15 @@ sudo apt install npm
 ```
 
 6- Clone the Repo
+```
 git clone https://github.com/ansgohar/Blockchain-HyperledgerFabric-Course.git
+```
 
 # Installing pre-requisites
-* Navigate to the location `DevelopmentEnv/pre-requisites/`
+* Navigate to `DevelopmentEnv/pre-requisites/`
+```
+cd ~/Blockchain-HyperledgerFabric-Course/DevelopmentEnv/pre-requisites/
+```
 * Run the following script to grand access to the script file
 ```
 chmod u+x prereqs-ubuntu.sh
