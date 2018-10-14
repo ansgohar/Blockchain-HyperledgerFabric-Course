@@ -10,13 +10,17 @@ https://www.ubuntu.com/download/alternative-downloads
 3- Install Ubuntu Over VM
 
 4- Update OS Packages
+```
 sudo apt-get update
 sudo apt-get upgrade
+```
 
 5- Install Prerequisite
+```
 sudo apt install git
 sudo apt install curl
 sudo apt install npm
+```
 
 6- Clone the Repo
 git clone https://github.com/ansgohar/Blockchain-HyperledgerFabric-Course.git
@@ -39,10 +43,9 @@ Whilst the browser app can be used to work on your Business Network code, most u
 
 Install VSCode from this URL: https://code.visualstudio.com/download `sudo dpkg -i code_1.28.1-1539281690_amd64.deb`
 
-Open VSCode, go to Extensions, then search for and install the `Hyperledger Composer extension` from the Marketplace.
+Open VSCode, Open the Cloned Repo
 
-
-* Use the scripts located at `` to download a local Hyperledger Fabric v1.3 runtime:
+* Use the scripts located at `DevelopmentEnv/scripts` to download a local Hyperledger Fabric v1.3 runtime:
 ```
 cd ~/Blockchain-HyperledgerFabric-Course/DevelopmentEnv/scripts
 ./bootstrap.sh 1.3.0 1.3.0 0.4.13
@@ -52,7 +55,7 @@ cd ~/Blockchain-HyperledgerFabric-Course/DevelopmentEnv/scripts
 The first time you start up a new runtime, you'll need to run the start script, then generate a PeerAdmin card:
 ```
 cd ~/fabric-dev-servers
-export FABRIC_VERSION=hlfv12
+export FABRIC_VERSION=hlfv13
 ./startFabric.sh
 ./createPeerAdminCard.sh
 ```
