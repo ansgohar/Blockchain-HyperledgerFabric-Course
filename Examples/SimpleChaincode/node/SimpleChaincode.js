@@ -11,7 +11,7 @@ var Chaincode = class {
 
   // Initialize the chaincode
   async Init(stub) {
-    console.info('========= example02 Init =========');
+    console.info('========= SimpleChaincode Init =========');
     let ret = stub.getFunctionAndParameters();
     console.info(ret);
     let args = ret.params;
