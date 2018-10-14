@@ -35,6 +35,7 @@ cd ~/Blockchain-HyperledgerFabric-Course/DevelopmentEnv/pre-requisites/
 ```
 * Execute the script file to download and setup the pre-requisites
 ```
+chmod u+x prereqs-ubuntu.sh
 ./prereqs-ubuntu.sh
 ```
 * Logout from the Ubuntu session
@@ -51,6 +52,7 @@ Open VSCode, Open the Cloned Repo
 * Use the scripts located at `DevelopmentEnv/scripts` to download a local Hyperledger Fabric v1.3 runtime:
 ```
 cd ~/Blockchain-HyperledgerFabric-Course/fabric-samples/scripts
+chmod u+x bootstrap.sh
 ./bootstrap.sh 1.3.0 1.3.0 0.4.13
 ```
 
@@ -58,6 +60,7 @@ cd ~/Blockchain-HyperledgerFabric-Course/fabric-samples/scripts
 The first time you start up a new runtime, you'll need to run the start script, then generate a PeerAdmin card:
 ```
 cd ~/Blockchain-HyperledgerFabric-Course/fabric-samples/fabcar/
+chmod u+x startFabric.sh
 ./startFabric.sh
 docker rm -f $(docker ps -aq)
 ```
