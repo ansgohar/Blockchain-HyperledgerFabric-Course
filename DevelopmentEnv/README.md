@@ -1,4 +1,25 @@
-# Instalation Steps
+# Setup the Environment
+
+# Maintain the Ubuntu OS
+1- Download Virtualization software
+https://www.virtualbox.org/wiki/Downloads
+
+2- Download Ubuntu 16.04 Desktop ISO
+https://www.ubuntu.com/download/alternative-downloads
+
+3- Install Ubuntu Over VM
+
+4- Update OS Packages
+sudo apt-get update
+sudo apt-get upgrade
+
+5- Install Prerequisite
+sudo apt install git
+sudo apt install curl
+sudo apt install npm
+
+6- Clone the Repo
+git clone https://github.com/ansgohar/Blockchain-HyperledgerFabric-Course.git
 
 # Installing pre-requisites
 * Navigate to the location `DevelopmentEnv/pre-requisites/`
