@@ -25,16 +25,13 @@ sudo apt install npm
 6- Clone the Repo
 ```
 git clone https://github.com/ansgohar/Blockchain-HyperledgerFabric-Course.git
+chmod u+x -R ~/Blockchain-HyperledgerFabric-Course/
 ```
 
 # Installing pre-requisites
 * Navigate to `DevelopmentEnv/pre-requisites/`
 ```
 cd ~/Blockchain-HyperledgerFabric-Course/DevelopmentEnv/pre-requisites/
-```
-* Run the following script to grand access to the script file
-```
-chmod u+x prereqs-ubuntu.sh
 ```
 * Execute the script file to download and setup the pre-requisites
 ```
@@ -53,7 +50,6 @@ Open VSCode, Open the Cloned Repo
 * Use the scripts located at `DevelopmentEnv/scripts` to download a local Hyperledger Fabric v1.3 runtime:
 ```
 cd ~/Blockchain-HyperledgerFabric-Course/fabric-samples/scripts
-chmod u+x bootstrap.sh
 ./bootstrap.sh 1.3.0 1.3.0 0.4.13
 ```
 
