@@ -57,7 +57,7 @@ chmod u+x bootstrap.sh
 ```
 
 * Controlling your dev environment
-The first time you start up a new runtime, you'll need to run the start script, then generate a PeerAdmin card:
+The first time you start up a new runtime, you'll need to run the start script:
 ```
 cd ~/Blockchain-HyperledgerFabric-Course/fabric-samples/fabcar/
 chmod u+x startFabric.sh
