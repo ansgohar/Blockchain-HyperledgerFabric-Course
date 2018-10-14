@@ -37,6 +37,7 @@ cd ~/Blockchain-HyperledgerFabric-Course/DevelopmentEnv/pre-requisites/
 ```
 ./prereqs-ubuntu.sh
 ```
+* Logout from the Ubuntu session
 
 # Installing Development Environment.
 
