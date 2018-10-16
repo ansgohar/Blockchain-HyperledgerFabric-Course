@@ -4,16 +4,21 @@
     "description": "SimpleChaincode Application interact with chain code ",
     "main": "server.js",
     "dependencies": {
-        "fabric-ca-client": "1.3.0",
-        "fabric-client": "1.3.0",
-        "express": "latest",
+        "angular": "^1.4.3",
         "body-parser": "latest",
         "ejs": "latest",
-        "angular": "^1.4.3"
+        "express": "latest",
+        "fabric-ca-client": "1.3.0",
+        "fabric-client": "1.3.0",
+        "ws": "^6.1.0"
     },
     "license": "Apache-2.0",
     "keywords": [
         "Hyperledger",
         "Fabric"
-    ]
+    ],
+    "optionalDependencies": {
+        "bufferutil": "^4.0.0",
+        "utf-8-validate": "^5.0.1"
+    }
 }

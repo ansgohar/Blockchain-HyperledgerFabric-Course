@@ -14,7 +14,6 @@ var Fabric_Client = require('fabric-client');
 var path = require('path');
 var util = require('util');
 var os = require('os');
-
 let config = require('./app-config.json')
 
 // Load app-config for config options 
@@ -109,7 +108,7 @@ module.exports = (function () {
 			var fromKey = array[0]
 			var toKey = array[1];
 			var fromAmount = array[2];
-			
+
 
 			var Fabric_Client = require('fabric-client');
 			var path = require('path');
@@ -167,11 +166,11 @@ module.exports = (function () {
 					//targets: let default to the peer assigned to the client
 					chaincodeId: 'simplechaincode',
 					fcn: 'invoke',
-					args: [fromKey,toKey,fromAmount],
+					args: [fromKey, toKey, fromAmount],
 					chainId: 'mychannel',
 					txId: tx_id
 				};
-               console.log(request);
+				console.log(request);
 				// send the transaction proposal to the peers
 				return channel.sendTransactionProposal(request);
 			}).then((results) => {
@@ -273,7 +272,7 @@ module.exports = (function () {
 			// end
 
 		}
-,
+		,
 		addNewKey: function (req, res) {
 
 			// add the following steps here
@@ -282,8 +281,8 @@ module.exports = (function () {
 			var array = req.params.info.split("-");
 			var key = array[0]
 			var keyValue = array[1];
-			
-			
+
+
 
 			var Fabric_Client = require('fabric-client');
 			var path = require('path');
@@ -341,11 +340,11 @@ module.exports = (function () {
 					//targets: let default to the peer assigned to the client
 					chaincodeId: 'simplechaincode',
 					fcn: 'addkey',
-					args: [key,keyValue],
+					args: [key, keyValue],
 					chainId: 'mychannel',
 					txId: tx_id
 				};
-               console.log(request);
+				console.log(request);
 				// send the transaction proposal to the peers
 				return channel.sendTransactionProposal(request);
 			}).then((results) => {
@@ -418,6 +417,79 @@ module.exports = (function () {
 						event_hub.connect();
 
 					});
+
+
+
+
+
+
+					let channel_event_hub = channel.newChannelEventHub(peer);
+
+
+
+					try {
+
+						let event_monitor = new Promise((resolve, reject) => {
+							let regid = null;
+
+							let handle = setTimeout(() => {
+								if (regid) {
+									// might need to do the clean up this listener
+									channel_event_hub.unregisterChaincodeEvent(regid);
+									console.log('Timeout - Failed to receive the chaincode event');
+								}
+								reject(new Error('Timed out waiting for chaincode event'));
+							}, 20000);
+
+							regid = channel_event_hub.registerChaincodeEvent('simplechaincode', 'customevent',
+								(event, block_num, txnid, status) => {
+									console.log("After registering Chain Coe Event ");
+
+									// This callback will be called when there is a chaincode event name
+									// within a block that will match on the second parameter in the registration
+									// from the chaincode with the ID of the first parameter.
+									console.log('Successfully got a chaincode event with transid:' + txnid + ' with status:' + status);
+
+									// might be good to store the block number to be able to resume if offline
+									//storeBlockNumForLater(block_num);
+									console.log("BLOCK NUMBER contains csutome events " + block_num)
+									console.log('event.payload' + event.payload)
+									// to see the event payload, the channel_event_hub must be connected(true)
+									let event_payload = event.payload.toString('utf8');
+									console.log("PAY LOAD RECEIVED from Custome chain code events :  " + event_payload);
+
+
+
+
+
+									
+
+									clearTimeout(handle);
+									// Chaincode event listeners are meant to run continuously
+									// Therefore the default to automatically unregister is false
+									// So in this case we want to shutdown the event listener once
+									// we see the event with the correct payload
+									channel_event_hub.unregisterChaincodeEvent(regid);
+									console.log('Successfully received the chaincode event on block number ' + block_num);
+									resolve('RECEIVED');
+
+								}, (error) => {
+									clearTimeout(handle);
+									console.log('Failed to receive the chaincode event ::' + error);
+									reject(error);
+								}
+
+								// no options specified
+								// unregister will default to false
+								// disconnect will default to false
+							);
+
+						});
+					} catch (error) {
+						console.log(error)
+					}
+					channel_event_hub.connect(true);
+					promises.push(channel_event_hub);
 					promises.push(txPromise);
 
 					return Promise.all(promises);

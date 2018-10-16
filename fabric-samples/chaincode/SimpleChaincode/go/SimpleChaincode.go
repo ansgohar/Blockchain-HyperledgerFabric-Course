@@ -113,6 +113,9 @@ func (t *SimpleChaincode )addNewKey(stub shim.ChaincodeStubInterface , args []st
 		return shim.Error(err.Error())
 	}
 
+// Add chain custom Events 
+	err = stub.SetEvent("customevent", []byte("New Key Added "+ A +" with Value "+args[1]))
+	
 	return shim.Success(nil)
 }
 
