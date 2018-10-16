@@ -1,11 +1,32 @@
-to start example use command 
-./startFabric.sh
+# Starting The Updated SimpleChaincode Application
 
-then change dir to ( client ) folder and execute below commands 
+1- Start the example use command 
+```
+cd ~ /Blockchain-HyperledgerFabric-Course/fabric-samples/chaincode/SimpleChaincode
+./startFabric.sh
+```
+
+2- Change dir to ( client ) folder and execute below commands 
+```
+cd client
+```
+3- Download the deplendencies
+```
 npm install
+```
+4- Regester Admin User
+```
 node registerAdmin.js
+```
+5- Register User
+```
 node registerUser.js
+```
+6- Start Client Application
+```
 node server.js
+```
+
 Start Node-RED in another tab using below command 
 node-red
 
