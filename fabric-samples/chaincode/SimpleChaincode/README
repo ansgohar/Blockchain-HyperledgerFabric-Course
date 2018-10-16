@@ -2,6 +2,7 @@ to start example use command
 ./startFabric.sh
 
 then change dir to ( client ) folder and execute below commands 
+npm install
 node registerAdmin.js
 node registerUser.js
 node server.js
