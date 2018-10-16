@@ -1,0 +1,7 @@
+{
+  
+       "channelName": "mychannel",
+       "peerAddress" : "grpc://localhost:7051",
+       "ordererAddress" :"grpc://localhost:7050",
+       "chainCodeName" :"simplechaincode"
+}

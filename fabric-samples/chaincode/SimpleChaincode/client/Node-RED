@@ -1,0 +1,177 @@
+[
+    {
+        "id": "12865c6a.beda14",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "438cb088.66f318",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/listener",
+        "wholemsg": "false"
+    },
+    {
+        "id": "cad81293.359978",
+        "type": "websocket-client",
+        "z": "",
+        "path": "ws://localhost:7051/event1",
+        "tls": "",
+        "wholemsg": "false"
+    },
+    {
+        "id": "cdbe6f86.c23528",
+        "type": "inject",
+        "z": "12865c6a.beda14",
+        "name": "Query Value for Key",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 270,
+        "y": 500,
+        "wires": [
+            [
+                "eca747b.37c5538"
+            ]
+        ]
+    },
+    {
+        "id": "eca747b.37c5538",
+        "type": "http request",
+        "z": "12865c6a.beda14",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://localhost:8000/getAccount/newkey",
+        "tls": "",
+        "x": 510,
+        "y": 500,
+        "wires": [
+            [
+                "9db8b608.a2f0f"
+            ]
+        ]
+    },
+    {
+        "id": "9db8b608.a2f0f",
+        "type": "debug",
+        "z": "12865c6a.beda14",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 770,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "f69b4b5.dad4638",
+        "type": "inject",
+        "z": "12865c6a.beda14",
+        "name": "submit transaction",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 290,
+        "y": 260,
+        "wires": [
+            [
+                "e5a9d1ac.3b218"
+            ]
+        ]
+    },
+    {
+        "id": "e5a9d1ac.3b218",
+        "type": "http request",
+        "z": "12865c6a.beda14",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://localhost:8000/balanceTransfer/a-b-1",
+        "tls": "",
+        "x": 530,
+        "y": 260,
+        "wires": [
+            [
+                "6e9c7eff.623448"
+            ]
+        ]
+    },
+    {
+        "id": "6e9c7eff.623448",
+        "type": "debug",
+        "z": "12865c6a.beda14",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 790,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4cc91ca8.a16cdc",
+        "type": "inject",
+        "z": "12865c6a.beda14",
+        "name": "Add New Key",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 250,
+        "y": 100,
+        "wires": [
+            [
+                "1653db6c.474fc5"
+            ]
+        ]
+    },
+    {
+        "id": "1653db6c.474fc5",
+        "type": "http request",
+        "z": "12865c6a.beda14",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://localhost:8000/addKey/g-90",
+        "tls": "",
+        "x": 510,
+        "y": 100,
+        "wires": [
+            [
+                "1c8d14fe.bac68b"
+            ]
+        ]
+    },
+    {
+        "id": "1c8d14fe.bac68b",
+        "type": "debug",
+        "z": "12865c6a.beda14",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 770,
+        "y": 100,
+        "wires": []
+    }
+]
