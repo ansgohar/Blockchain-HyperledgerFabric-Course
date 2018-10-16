@@ -1,0 +1,25 @@
+to start example use command 
+./startFabric.sh
+
+then change dir to ( client ) folder and execute below commands 
+node registerAdmin.js
+node registerUser.js
+node server.js
+Start Node-RED in another tab using below command 
+node-red
+
+open file (Node-RED ) copy content to clipboard 
+
+open browser and navigate to 
+http://127.0.0.1:1880
+
+from node-red interface use import option to import from clipboard 
+
+
+
+
+
+
+
+
+
