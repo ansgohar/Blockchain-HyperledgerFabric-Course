@@ -2,7 +2,7 @@
 
 1- Start the example use command 
 ```
-cd ~ /Blockchain-HyperledgerFabric-Course/fabric-samples/chaincode/SimpleChaincode
+cd ~/Blockchain-HyperledgerFabric-Course/fabric-samples/chaincode/SimpleChaincode
 ```
 
 1.1- Go Example
