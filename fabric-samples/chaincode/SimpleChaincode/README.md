@@ -3,8 +3,27 @@
 1- Start the example use command 
 ```
 cd ~ /Blockchain-HyperledgerFabric-Course/fabric-samples/chaincode/SimpleChaincode
-./startFabric.sh
 ```
+1.1- Node Example
+```
+./startFabric.sh node
+```
+1.2- Go Example
+```
+./startFabric.sh golang
+```
+
+1.3- Java Example
+```
+./startFabric.sh java
+```
+
+2- Clean running Docker containers
+```
+docker rm -f $(docker ps -aq)
+```
+
+EOF
 
 2- Change dir to ( client ) folder and execute below commands 
 ```
