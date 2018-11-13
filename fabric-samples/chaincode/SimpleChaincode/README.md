@@ -25,7 +25,8 @@ docker rm -f $(docker ps -aq)
 
 # Integration Section
 
-1- Starting The Updated SimpleChaincode Application as above
+1- Starting The Updated SimpleChaincode Application as above.
+
 2- Change dir to ( client ) folder and execute below commands 
 ```
 cd client
