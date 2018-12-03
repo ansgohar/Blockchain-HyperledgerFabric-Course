@@ -25,7 +25,7 @@ docker rm -f $(docker ps -aq)
 
 # Integration Section
 
-1- Starting The Updated SimpleChaincode Application as above.
+1- Starting The Updated SimpleChaincode Application as above without the cleaning step.
 
 2- Change dir to ( client ) folder and execute below commands 
 ```
@@ -35,7 +35,7 @@ cd client
 ```
 npm install
 ```
-4- Regester Admin User
+4- Register Admin User
 ```
 node registerAdmin.js
 ```
