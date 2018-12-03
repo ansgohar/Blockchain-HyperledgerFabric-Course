@@ -64,3 +64,22 @@ chmod u+x startFabric.sh
 ./startFabric.sh
 docker rm -f $(docker ps -aq)
 ```
+
+# Installing Node-Red Environment.
+1- Before you can install Node-RED, you must have a working install of Node.js. We recommend the use of Node.js LTS 8.x.
+```
+node -v
+```
+
+2- Install Node-RED useing the node package manager
+```
+sudo npm install -g  node-red
+```
+
+3- Check It's working well 
+```
+node-red
+```
+
+4- Open Node Red web client
+http://127.0.0.1:1880/
