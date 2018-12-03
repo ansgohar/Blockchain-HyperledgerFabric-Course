@@ -25,7 +25,11 @@ docker rm -f $(docker ps -aq)
 
 # Integration Section
 
-1- Starting The Updated SimpleChaincode Application as above without the cleaning step.
+1- Starting The Updated SimpleChaincode Application.
+```
+cd ~/Blockchain-HyperledgerFabric-Course/fabric-samples/chaincode/SimpleChaincode
+./startFabric.sh node
+```
 
 2- Change dir to ( client ) folder and execute below commands 
 ```
@@ -48,23 +52,23 @@ node registerUser.js
 node server.js
 ```
 
-Start Node-RED in another tab using below command 
+7- Start Node-RED in another tab using below command 
+```
 node-red
+```
 
-open file (Node-RED ) copy content to clipboard 
+7.1- Open file (Node-RED ) copy content to clipboard 
 
-open browser and navigate to 
+7.2- Open browser and navigate to 
 http://127.0.0.1:1880
 
-from node-red interface use import option to import from clipboard 
+7.3- From node-red interface use import option to import from clipboard 
 
+7.4 Debug the response of the request
 
+8- Stop the Node-Red Application
 
-
-
-
-
-
-
-
-
+9-Clean running Docker containers
+```
+docker rm -f $(docker ps -aq)
+```
