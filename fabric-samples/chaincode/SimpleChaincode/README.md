@@ -28,7 +28,7 @@ docker rm -f $(docker ps -aq)
 1- Starting The Updated SimpleChaincode Application.
 ```
 cd ~/Blockchain-HyperledgerFabric-Course/fabric-samples/chaincode/SimpleChaincode
-./startFabric.sh node
+./startFabric.sh golang
 ```
 
 2- Change dir to ( client ) folder and execute below commands 
